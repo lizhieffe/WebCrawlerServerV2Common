@@ -1,9 +1,14 @@
 package com.zl.abstracts;
 
+import java.io.Serializable;
+
 import com.zl.interfaces.IJobManager;
 import com.zl.utils.StringUtil;
 
-public abstract class AJob {
+public abstract class AJob implements Serializable {
+	
+	private static final long serialVersionUID = 5420882643716827160L;
+	
 	private static int globalCount = 0;
 	private int id;
 	private IJobManager manager;

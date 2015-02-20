@@ -1,4 +1,4 @@
-package com.zl.daemons;
+package com.zl.sockets;
 
 import java.io.Serializable;
 
