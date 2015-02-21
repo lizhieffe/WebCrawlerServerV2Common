@@ -1,5 +1,7 @@
 package com.zl.interfaces;
 
+import java.net.Socket;
+
 public interface ISocketListenerCallback {
-	public void onReceiveObject(Object object);
+	public void onReceiveObject(Socket socket, Object object);
 }

@@ -33,7 +33,7 @@ public class SocketListener implements Runnable {
 				Object obj = SocketUtil.receiveObject(socket);
 				if (obj != null && callbacks != null)
 					for (ISocketListenerCallback callback : callbacks)
-						callback.onReceiveObject(obj);
+						callback.onReceiveObject(socket, obj);
 			}
 			close();
 		} catch (Exception e) {

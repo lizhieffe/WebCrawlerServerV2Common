@@ -12,28 +12,16 @@ import java.net.Socket;
 
 public class SocketUtil {
 	
-	public static void sendString(Socket socket, String str) {
-		OutputStreamWriter osw;
-	    try {
-			osw =new OutputStreamWriter(socket.getOutputStream(), "UTF-8");
-	        osw.write(str, 0, str.length());
-	        osw.flush();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public static void sendString (Socket socket, String str) throws IOException, UnsupportedEncodingException {
+		OutputStreamWriter osw =new OutputStreamWriter(socket.getOutputStream(), "UTF-8");
+        osw.write(str, 0, str.length());
+        osw.flush();
 	}
 	
-	public static void sendObject(Socket socket, Object obj) {
-		ObjectOutput out = null;
-		try {
-			out = new ObjectOutputStream(socket.getOutputStream());
-			out.writeObject(obj);
-			out.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public static void sendObject (Socket socket, Object obj) throws IOException {
+		ObjectOutput out = new ObjectOutputStream(socket.getOutputStream());
+		out.writeObject(obj);
+		out.flush();
 	}
 	
 	/**

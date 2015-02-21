@@ -2,7 +2,7 @@ package com.zl.sockets;
 
 import java.io.Serializable;
 
-public class te implements Serializable {
+public class Verification implements Serializable {
 
 	/**
 	 * 
